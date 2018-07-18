@@ -159,3 +159,18 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Restrict admin menu links for editors to only essential functions
+ */
+function rula_imprinting_canada_admin_menu() {
+    global $submenu;
+
+    // Remove media for non-admins
+    if( !current_user_can('manage_options') ) {
+      remove_menu_page( 'edit.php' );                   // Posts
+      remove_menu_page( 'upload.php' );                 // Media
+      remove_menu_page( 'edit-comments.php' );          // Comments
+      remove_menu_page( 'tools.php' );                  // Tools
+    }
+}
+add_action( 'admin_menu', 'rula_imprinting_canada_admin_menu' );
