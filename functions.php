@@ -7,6 +7,10 @@
  * @package rula_imprinting_canada
  */
 
+define("CSS_URI", get_template_directory_uri() . '/css/');
+define("SCRIPTS_URI", get_template_directory_uri() . '/js/');
+define("VENDOR_URI", get_template_directory_uri() . '/vendor/');
+
 if ( ! function_exists( 'rula_imprinting_canada_setup' ) ) :
   /**
    * Sets up theme defaults and registers support for various WordPress features.
@@ -120,6 +124,10 @@ add_action( 'widgets_init', 'rula_imprinting_canada_widgets_init' );
  * Enqueue scripts and styles.
  */
 function rula_imprinting_canada_scripts() {
+  // Bootstrap 4.1.2
+  wp_enqueue_style( 'bootstrap-style', VENDOR_URI . 'bootstrap-4.1.2/css/bootstrap.min.css', array(), '4.1.2' );
+  wp_enqueue_script( 'bootstrap-bundle-js', VENDOR_URI . 'bootstrap-4.1.2/js/bootstrap.bundle.min.js', array('jquery'), '4.1.2', true );
+
   wp_enqueue_style( 'rula_imprinting_canada-style', get_stylesheet_uri() );
 
   wp_enqueue_script( 'rula_imprinting_canada-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
