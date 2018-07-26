@@ -30,6 +30,10 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+</div><!-- .col -->
+</div><!-- .row -->
+</div><!-- .container -->
+
 <style type="text/css">
 	.fixed-footer-wrapper {
 		background-color: #fff;

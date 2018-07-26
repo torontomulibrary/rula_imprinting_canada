@@ -642,3 +642,7 @@ object {
 body {
 	background-image: url('./images/background-table.png');
 }
+
+.single-chapters #page {
+	background-image: url('./images/background-paper.png');
+}
