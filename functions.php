@@ -183,5 +183,16 @@ function rula_imprinting_canada_admin_menu() {
 }
 add_action( 'admin_menu', 'rula_imprinting_canada_admin_menu' );
 
-// Include eResource custom post type
+// Include chapter custom post type
 include_once( get_template_directory() . '/inc/chapter-cpt.php');
+
+function rula_imprinting_canada_mce_buttons_2( $buttons ) { 
+  /**
+   * Add in a core button that's disabled by default
+   */
+  $buttons[] = 'superscript';
+  $buttons[] = 'subscript';
+
+  return $buttons;
+}
+add_filter( 'mce_buttons_2', 'rula_imprinting_canada_mce_buttons_2' );
