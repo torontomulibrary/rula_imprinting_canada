@@ -642,8 +642,22 @@ object {
 /* Imprinting Canada */
 body {
 	background-image: url('./images/background-table.png');
+	background-attachment: fixed;
 }
 
 .single-chapters #page {
-	background-image: url('./images/background-paper.png');
+	min-height: 100vh;
+	padding: 2.5rem 5rem;
+}
+
+.single-chapters #page:after {
+	content: "";
+  background-image: url('./images/background-paper.png');
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
