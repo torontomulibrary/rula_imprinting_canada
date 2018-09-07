@@ -49,14 +49,33 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rula_imprinting_canada' ); ?></button>
+
+	</header><!-- #masthead -->
+
+	<nav id="site-navigation" class="main-navigation">
+		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rula_imprinting_canada' ); ?></button>
+		<div class="navigation-container">
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'primary-navigation',
+				'container' => false
 			) );
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+			<div class="content-navigation">
+				<div class="h1">Contents</div>
+				<ul>
+					<li>Chapter 1</li>
+		      <li>Chapter 2</li>
+		      <li>Chapter 3</li>
+		    </ul>
+			</div>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'secondary-navigation',
+				'container' => false
+			) );
+			?>
+		</div>
+	</nav><!-- #site-navigation -->
 
 	<div id="content" class="site-content">

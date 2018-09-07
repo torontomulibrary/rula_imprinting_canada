@@ -11,7 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
-    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    <div class="chapter-title-wrap">
+      <div class="chapter-number"><?php the_title() ?></div>
+      <h1 class="entry-title"><?php the_field('chapter_title') ?></h1>
+      <div class="chapter-author"><?php the_field('chapter_author') ?></div>
+    </div>
   </header><!-- .entry-header -->
 
   <?php rula_imprinting_canada_post_thumbnail(); ?>
@@ -20,11 +24,14 @@
     <?php
     the_content();
 
-    wp_link_pages( array(
-      'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rula_imprinting_canada' ),
-      'after'  => '</div>',
-    ) );
+    //wp_link_pages( array(
+    //  'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rula_imprinting_canada' ),
+    //  'after'  => '</div>',
+    //) );
     ?>
+    <div class="page-links">
+      <span class="entry-title"><?php the_field('chapter_title') ?></span> | <a href="#">Essays</a> &bull; <a href="#">Case Studies</a>
+    </div>
   </div><!-- .entry-content -->
 
   <?php if ( get_edit_post_link() ) : ?>

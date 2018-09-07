@@ -49,6 +49,7 @@ if ( ! function_exists( 'rula_imprinting_canada_setup' ) ) :
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
       'primary-navigation' => esc_html__( 'Primary Navigation', 'rula_imprinting_canada' ),
+      'secondary-navigation' => esc_html__( 'Secondary Navigation', 'rula_imprinting_canada' ),
     ) );
 
     /*
