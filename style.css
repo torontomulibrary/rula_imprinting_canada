@@ -651,7 +651,7 @@ body {
   background-attachment: fixed;
 }
 
-.single .navigation-container {
+.single-chapters .navigation-container {
   display: none;
   position: fixed;
   top: 0;
@@ -663,7 +663,7 @@ body {
   padding-bottom: 52px; 
 }
 
-.single .navigation-container:after {
+.single-chapters .navigation-container:after {
   content: '';
   top: 0;
   left: 0;
@@ -673,6 +673,10 @@ body {
   background: #000;
   opacity: 0.8;
   z-index: -1;
+}
+
+.single-chapters .navigation-container li a {
+  color: #fff;
 }
 
 .single-chapters .main-navigation.toggled .navigation-container {

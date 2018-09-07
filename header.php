@@ -61,14 +61,20 @@
 				'container' => false
 			) );
 			?>
+
+			<?php $chapters_query = new WP_Query(array('post_type' => 'chapters', 'post_parent' => 0, 'posts_per_page' => -1, 'order' => 'ASC', 'order_by' => 'title', 'depth' => 1 )); ?>
+			<?php if ( $chapters_query->have_posts() ) : ?>
 			<div class="content-navigation">
 				<div class="h1">Contents</div>
 				<ul>
-					<li>Chapter 1</li>
-		      <li>Chapter 2</li>
-		      <li>Chapter 3</li>
+						<?php while ( $chapters_query->have_posts() ) : $chapters_query->the_post(); ?>
+							<li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+				    <?php endwhile; ?>
 		    </ul>
 			</div>
+		  <?php endif ?>
+		  <?php wp_reset_postdata(); ?>
+
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'secondary-navigation',
