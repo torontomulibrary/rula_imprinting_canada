@@ -17,6 +17,8 @@
 		return;
 	}
 
+	buttons = container.getElementsByTagName( 'button' );
+
 	menu = container.getElementsByTagName( 'ul' )[0];
 
 	// Hide menu toggle button if menu is empty and return early.
@@ -28,6 +30,20 @@
 	menu.setAttribute( 'aria-expanded', 'false' );
 	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
 		menu.className += ' nav-menu';
+	}
+
+	for ( i = 0; i < buttons.length; i++ ) {
+		buttons[i].onclick = function() {
+			if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+				container.className = container.className.replace( ' toggled', '' );
+				setButtonAttributes( 'aria-expanded', 'false' );
+				menu.setAttribute( 'aria-expanded', 'false' );
+			} else {
+				container.className += ' toggled';
+				setButtonAttributes( 'aria-expanded', 'true' );
+				menu.setAttribute( 'aria-expanded', 'true' );
+			}
+		};
 	}
 
 	button.onclick = function() {
@@ -51,6 +67,14 @@
 		links[i].addEventListener( 'blur', toggleFocus, true );
 	}
 
+	/**
+	 * Sets the attributes for all buttons in the container
+	 */
+	function setButtonAttributes(attribute, value) {
+		for ( i = 0; i < buttons.length; i++ ) {
+			buttons[i].setAttribute(attribute, value)
+		}
+	}
 	/**
 	 * Sets or removes .focus class on an element.
 	 */
