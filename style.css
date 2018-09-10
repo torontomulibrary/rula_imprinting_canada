@@ -651,7 +651,7 @@ body {
   background-attachment: fixed;
 }
 
-.single-chapters .navigation-container {
+.navigation-container {
   display: none;
   position: fixed;
   top: 0;
@@ -663,7 +663,7 @@ body {
   padding-bottom: 52px; 
 }
 
-.single-chapters .navigation-container:after {
+.navigation-container:after {
   content: '';
   top: 0;
   left: 0;
@@ -675,34 +675,34 @@ body {
   z-index: -1;
 }
 
-.single-chapters .navigation-container li a {
+.navigation-container li a {
   color: #fff;
 }
 
-.single-chapters .main-navigation.toggled .navigation-container {
+.main-navigation.toggled .navigation-container {
   display: block;
   color: #FFF;
   font-size: 1.15rem;
   text-align: center;
 }
 
-.single-chapters .main-navigation {
+.main-navigation {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.single-chapters .content-navigation {
+.content-navigation {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.single-chapters .content-navigation .h1 {
+.content-navigation .h1 {
   font-size: 1.25rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.single-chapters .menu-toggle {
+.menu-toggle {
   position: relative;
   top: 1.5rem;
   left: 2rem;
@@ -712,29 +712,31 @@ body {
 
 }
 
-.single-chapters .main-navigation .menu li {
+.main-navigation .menu li {
   float: none;
   text-align: center;
 }
 
-.single-chapters .main-navigation .menu li a {
+.main-navigation .menu li a {
   color: #fff;
   text-transform: uppercase;
 }
 
-.single-chapters .content-navigation li {
+.content-navigation li {
   font-size: 1rem;
   font-style: italic;
 }
 
-.single-chapters #page {
+.page #page,
+.single #page {
   position: relative;
   min-height: 100vh;
   padding: 2.5rem 5rem;
   text-align: justify;
 }
 
-.single-chapters #page:after {
+.page #page:after,
+.single #page:after {
   content: "";
   background-image: url('./images/background-paper.png');
   opacity: 0.9;
