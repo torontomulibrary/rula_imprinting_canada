@@ -29,9 +29,15 @@
     //  'after'  => '</div>',
     //) );
     ?>
-    <div class="page-links">
-      <span class="entry-title"><?php the_field('chapter_title') ?></span> | <a href="#">Essays</a> &bull; <a href="#">Case Studies</a>
-    </div>
+    <?php if ( is_top_level_page() ) : ?>
+      <div class="page-links">
+        <span class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_field('chapter_title') ?></a></span> | <a href="essays">Essays</a> &bull; <a href="case-studies">Case Studies</a>
+      </div>
+    <?php else : ?>
+      <div class="page-links">
+        <span class="entry-title"><a href="<?php the_permalink($post->post_parent); ?>"><?php the_field('chapter_title', $post->post_parent) ?></a></span> | <a href="essays">Essays</a> &bull; <a href="case-studies">Case Studies</a>
+      </div>
+    <?php endif; ?>
   </div><!-- .entry-content -->
 
   <?php if ( get_edit_post_link() ) : ?>
