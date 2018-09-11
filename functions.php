@@ -11,6 +11,8 @@ define("CSS_URI", get_template_directory_uri() . '/css/');
 define("SCRIPTS_URI", get_template_directory_uri() . '/js/');
 define("VENDOR_URI", get_template_directory_uri() . '/vendor/');
 
+include_once( get_template_directory() . '/inc/helpers.php');
+
 if ( ! function_exists( 'rula_imprinting_canada_setup' ) ) :
   /**
    * Sets up theme defaults and registers support for various WordPress features.
