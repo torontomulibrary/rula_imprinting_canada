@@ -7,14 +7,15 @@ function rula_imprinting_canada_create_chapter_cpt() {
   register_post_type( 'chapters',
     array(
       'labels' => array(
-        'name' => __( 'Chapters' ),
-        'singular_name' => __( 'Chapter' ),
-        'add_new_item' => __( 'Add new chapter' ),
-        'edit_item' => __( 'Edit chapter' ),
-        'new_item' => __( 'New chapter' ),
-        'view_item' => __( 'View chapter' ),
-        'view_items' => __( 'View chapters' ),
-        'search_items' => __( 'Search chapters' ),
+        'name' => __( 'Content' ),
+        'all_items' => __( 'All Content' ),
+        'singular_name' => __( 'Content' ),
+        'add_new_item' => __( 'Add new content' ),
+        'edit_item' => __( 'Edit content' ),
+        'new_item' => __( 'New content' ),
+        'view_item' => __( 'View content' ),
+        'view_items' => __( 'View content' ),
+        'search_items' => __( 'Search content' ),
         'attributes' => __( 'Chapter Attributes' )
       ),
       'public' => true,
