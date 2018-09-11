@@ -81,7 +81,7 @@
 				'container' => false
 			) );
 			?>
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rula_imprinting_canada' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Close Menu', 'rula_imprinting_canada' ); ?></button>
 		</div>
 	</nav><!-- #site-navigation -->
 
