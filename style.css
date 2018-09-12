@@ -748,16 +748,16 @@ body {
   z-index: -1;   
 }
 
-.single-chapters .entry-header {
+.entry-header {
   text-align: center;
 }
 
-.single-chapters .chapter-title-wrap {
+.chapter-title-wrap {
   position: relative;
   display: inline-block;
 }
 
-.single-chapters .chapter-title-wrap:after {
+.chapter-title-wrap:after {
   content: '';
   display: block;
   margin: 0 auto;
@@ -768,21 +768,21 @@ body {
   width: 85%;
 }
 
-.single-chapters .chapter-number {
+.chapter-number {
   font-size: 1.25rem;
   text-transform: uppercase;
 }
 
-.single-chapters .entry-title {
+.entry-title {
   font-style: italic;
 }
 
-.single-chapters .entry-header .entry-title {
+.entry-header .entry-title {
   font-size: 1.75rem;
   margin-top: 0.25rem;
 }
 
-.single-chapters .chapter-author {
+.chapter-author {
   font-size: 1.25rem;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
