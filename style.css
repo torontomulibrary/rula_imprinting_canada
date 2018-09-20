@@ -170,7 +170,7 @@ dd {
 img {
   height: auto;
   /* Make sure images are scaled correctly. */
-  /*max-width: 100%;*/
+  max-width: 100%;
   /* Adhere to container width. */
 }
 
@@ -645,6 +645,13 @@ object {
   display: block;
 }
 
+/* Bootstrap overrides */
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 90vw;
+  }
+}
+
 /* Imprinting Canada */
 body {
   background-image: url('./images/background-table.png');
@@ -795,4 +802,36 @@ body {
   padding-top: 4px;
   padding-right: 8px;
   padding-left: 3px;
+}
+
+.btn.ic_media_modal {
+  max-width: 300px;
+  background: #fcfcfc;
+  color: #000;
+  border: none;
+  padding: 0;
+  box-shadow: 0px 3px 15px -2px #000;
+  border-radius: 0;
+}
+
+.btn.ic_media_modal .caption {
+  white-space: normal;
+  text-align: left;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.btn.ic_media_modal.float-right {
+  margin-left: 1rem;
+}
+
+.btn.ic_media_modal.float-left {
+  margin-right: 1rem;
+}
+
+.modal.ic_media_modal .modal-header {
+  border-bottom: 0;
+}
+.modal.ic_media_modal .modal-footer {
+  border-top: 0;
 }

@@ -1,0 +1,92 @@
+{
+    "key": "group_5b9a8bb86eec0",
+    "title": "Media Attachments",
+    "fields": [
+        {
+            "key": "field_5b9a8c83a2ea0",
+            "label": "Type",
+            "name": "type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Book Cover": "Book Cover",
+                "Book Jacket": "Book Jacket",
+                "Title Page": "Title Page",
+                "Text Page": "Text Page",
+                "Illustration": "Illustration"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b9a8f307d9ed",
+            "label": "Illustration Type",
+            "name": "illustration_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b9a8c83a2ea0",
+                        "operator": "==",
+                        "value": "Illustration"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Photograph (non frontispiece)": "Photograph (non frontispiece)",
+                "Drawing": "Drawing",
+                "Engraving \/ Etching": "Engraving \/ Etching",
+                "Graph": "Graph",
+                "Lithograph": "Lithograph",
+                "Map": "Map",
+                "Portrait": "Portrait",
+                "Photograph": "Photograph",
+                "Unspecified format\/process": "Unspecified format\/process"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "attachment",
+                "operator": "==",
+                "value": "image"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1536855943
+}
