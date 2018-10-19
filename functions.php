@@ -186,7 +186,7 @@ function rula_imprinting_canada_admin_menu() {
 add_action( 'admin_menu', 'rula_imprinting_canada_admin_menu' );
 
 // Include chapter custom post type
-// include_once( get_template_directory() . '/inc/chapter-cpt.php');
+include_once( get_template_directory() . '/inc/chapter-cpt.php');
 
 function rula_imprinting_canada_mce_buttons_2( $buttons ) { 
   /**
