@@ -10,6 +10,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <?php if ( is_top_level_page() ) : ?>
+    <div class="page-links float-right">
+      <span class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_field('chapter_title') ?></a></span> | <a href="essays">Essays</a> &bull; <a href="case-studies">Case Studies</a>
+    </div>
+  <?php else : ?>
+    <div class="page-links float-right">
+      <span class="entry-title"><a href="<?php the_permalink($post->post_parent); ?>"><?php the_field('chapter_title', $post->post_parent) ?></a></span> | <a href="essays">Essays</a> &bull; <a href="case-studies">Case Studies</a>
+    </div>
+  <?php endif; ?>
+
   <header class="entry-header">
     <div class="chapter-title-wrap">
       <div class="chapter-number"><?php the_title() ?></div>
@@ -21,6 +31,7 @@
   <?php rula_imprinting_canada_post_thumbnail(); ?>
 
   <div class="entry-content">
+
     <?php
     the_content();
 
@@ -29,6 +40,7 @@
     //  'after'  => '</div>',
     //) );
     ?>
+
     <?php if ( is_top_level_page() ) : ?>
       <div class="page-links">
         <span class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_field('chapter_title') ?></a></span> | <a href="essays">Essays</a> &bull; <a href="case-studies">Case Studies</a>
@@ -38,6 +50,7 @@
         <span class="entry-title"><a href="<?php the_permalink($post->post_parent); ?>"><?php the_field('chapter_title', $post->post_parent) ?></a></span> | <a href="essays">Essays</a> &bull; <a href="case-studies">Case Studies</a>
       </div>
     <?php endif; ?>
+
   </div><!-- .entry-content -->
 
   <?php if ( get_edit_post_link() ) : ?>

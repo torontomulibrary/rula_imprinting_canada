@@ -275,15 +275,16 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
+  color: #252525;
+  text-decoration: underline;
 }
 
 a:visited {
-  color: purple;
+  color: #252525;
 }
 
 a:hover, a:focus, a:active {
-  color: midnightblue;
+  color: #6d0b25;
 }
 
 a:focus {
@@ -648,7 +649,8 @@ object {
 /* Bootstrap overrides */
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 90vw;
+    max-width: 1140px;
+
   }
 }
 
@@ -745,7 +747,8 @@ body {
 .page #page:after,
 .single #page:after {
   content: "";
-  background-image: url('./images/background-paper.png');
+  background: url('./images/background-paper.png') top right no-repeat;
+  background-attachment: fixed;
   opacity: 0.9;
   top: 0;
   left: 0;
@@ -755,16 +758,19 @@ body {
   z-index: -1;   
 }
 
+.home.page #page:after {
+  background: none;
+}
+
 .entry-header {
   text-align: center;
 }
 
-.chapter-title-wrap {
-  position: relative;
+.entry-header-wrapper {
   display: inline-block;
 }
 
-.chapter-title-wrap:after {
+.entry-header-wrapper:after {
   content: '';
   display: block;
   margin: 0 auto;
@@ -775,33 +781,36 @@ body {
   width: 85%;
 }
 
-.chapter-number {
+.entry-header-topper {
   font-size: 1.25rem;
   text-transform: uppercase;
 }
 
 .entry-title {
   font-style: italic;
-}
-
-.entry-header .entry-title {
   font-size: 1.75rem;
   margin-top: 0.25rem;
 }
 
-.chapter-author {
+.entry-author {
   font-size: 1.25rem;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
-.single-chapters p:first-of-type:first-letter {
+.page-template-chapter p:first-of-type:first-letter,
+.page-template-casestudy p:first-of-type:first-letter,
+.page-template-essay p:first-of-type:first-letter {
   float: left;
   font-size: 75px;
   line-height: 60px;
   padding-top: 4px;
   padding-right: 8px;
   padding-left: 3px;
+}
+
+.page-links {
+  text-align: center;
 }
 
 .btn.ic_media_modal {
@@ -829,9 +838,40 @@ body {
   margin-right: 1rem;
 }
 
+.modal.ic_media_modal {
+  padding-left: 17px;
+}
+
 .modal.ic_media_modal .modal-header {
   border-bottom: 0;
+  text-transform: uppercase;
+  text-align: left;
 }
+
+.modal.ic_media_modal .ic_modal_image {
+  margin-bottom: 1rem;
+}
+
+.modal.ic_media_modal .ic_modal_metadata {
+}
+
+@media (min-width: 1024px) {
+  .modal.ic_media_modal .modal-body {
+    display: flex;
+  } 
+
+  .modal.ic_media_modal .ic_modal_metadata {
+    order: 0;
+    min-width: 325px;
+  }
+
+  .modal.ic_media_modal .ic_modal_image {
+    order: 1;
+    margin-bottom: 0;
+  }
+
+}
+
 .modal.ic_media_modal .modal-footer {
   border-top: 0;
 }

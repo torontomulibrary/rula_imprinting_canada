@@ -39,7 +39,7 @@
 			) );
 			?>
 
-			<?php $chapters_query = new WP_Query(array('post_type' => 'chapters', 'post_parent' => 0, 'posts_per_page' => -1, 'order' => 'ASC', 'order_by' => 'title', 'depth' => 1 )); ?>
+			<?php $chapters_query = new WP_Query(array('post_type' => 'page', 'posts_per_page' => -1, 'order' => 'ASC', 'order_by' => 'title', 'depth' => 1, 'meta_key' => '_wp_page_template', 'meta_value' => 'chapter.php' )); ?>
 			<?php if ( $chapters_query->have_posts() ) : ?>
 			<div class="content-navigation">
 				<div class="h1">Contents</div>

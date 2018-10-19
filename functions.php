@@ -179,7 +179,6 @@ function rula_imprinting_canada_admin_menu() {
     // Remove media for non-admins
     if( !current_user_can('manage_options') ) {
       remove_menu_page( 'edit.php' );                   // Posts
-      remove_menu_page( 'upload.php' );                 // Media
       remove_menu_page( 'edit-comments.php' );          // Comments
       remove_menu_page( 'tools.php' );                  // Tools
     }
@@ -187,7 +186,7 @@ function rula_imprinting_canada_admin_menu() {
 add_action( 'admin_menu', 'rula_imprinting_canada_admin_menu' );
 
 // Include chapter custom post type
-include_once( get_template_directory() . '/inc/chapter-cpt.php');
+// include_once( get_template_directory() . '/inc/chapter-cpt.php');
 
 function rula_imprinting_canada_mce_buttons_2( $buttons ) { 
   /**
@@ -252,7 +251,18 @@ function rula_imprinting_canada_media_modal_header($attachment_id) {
 
 function rula_imprinting_canada_media_modal_body($attachment_id) {
   $attachment_url = wp_get_attachment_url($attachment_id);
-  return '<div class="modal-body"><img src="' . $attachment_url . '"></div>';
+  $acf_object_type = get_field('type', $attachment_id);
+
+  $html = "";
+  $html .= '<div class="modal-body">';
+  $html .= '<div class="ic_modal_image">';
+  $html .= '<img src="' . $attachment_url . '">';
+  $html .= '</div>';
+  $html .= '<div class="ic_modal_metadata">';
+  $html .= '<div>' . $acf_object_type . '</div>';
+  $html .= '</div>';
+  $html .= '</div>';
+  return $html;
 }
 
 function rula_imprinting_canada_media_modal_footer($attachment_id) {
