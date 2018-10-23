@@ -15,7 +15,7 @@ get_header();
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
           <div class="page-links">
-            <a href="<?php the_permalink($post->post_parent); ?>"><em><?php the_field('chapter_title', $post->post_parent) ?></em></a> | <a href="<?php the_permalink($post->post_parent); ?>/essays">Essays</a> &bull; <a href="<?php the_permalink($post->post_parent); ?>/case-studies">Case Studies</a>
+            <a href="<?php the_permalink($post->post_parent); ?>"><em><?php the_field('chapter_title', $post->post_parent) ?></em></a> | <a href="<?php the_permalink($post->post_parent); ?>essays">Essays</a> &bull; <a href="<?php the_permalink($post->post_parent); ?>case-studies">Case Studies</a>
           </div>
 
           <header class="entry-header">
