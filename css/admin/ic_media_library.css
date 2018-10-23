@@ -1,0 +1,44 @@
+/* Hide fields and settings that we don't want to see */
+label.setting[data-setting="caption"],
+label.setting[data-setting="description"],
+label.setting:last-of-type, /* this should target the "Uploaded By" field */
+p.media-types.media-types-required-info {
+  display: none;
+}
+
+/* Change the layout to a single column layout */
+.edit-attachment-frame .attachment-media-view {
+  float: none;
+  width: auto;
+  height: auto;
+}
+
+.edit-attachment-frame .attachment-info {
+  overflow: none;
+  width: auto;
+  height: auto;
+}
+
+/* Give the input fields a bit more breathing room */
+.media-modal .compat-attachment-fields > tbody > .acf-field-repeater .acf-actions {
+  margin-bottom: 5px!important;
+}
+
+@media (min-width: 900px) {
+  .attachment-details .setting span, .media-sidebar .setting span {
+    min-width: 20%;
+  }
+
+  .attachment-details .setting .value, .attachment-details .setting input[type=tel], .attachment-details .setting input[type=text], .attachment-details .setting input[type=password], .attachment-details .setting input[type=number], .attachment-details .setting input[type=search], .attachment-details .setting input[type=email], .attachment-details .setting input[type=url], .attachment-details .setting textarea, .media-sidebar .setting .value, .media-sidebar .setting input[type=tel], .media-sidebar .setting input[type=text], .media-sidebar .setting input[type=password], .media-sidebar .setting input[type=number], .media-sidebar .setting input[type=search], .media-sidebar .setting input[type=email], .media-sidebar .setting input[type=url], .media-sidebar .setting textarea {
+    width: 75%;
+  }
+
+  /* Advanced Custom Fields for Media Attachment Details */
+  .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-label {
+    min-width: 20%!important;
+    max-width: 20%!important;
+  }
+  .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-input {
+    width: 75%!important;
+  }
+}

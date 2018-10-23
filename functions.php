@@ -170,34 +170,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
   require get_template_directory() . '/inc/jetpack.php';
 }
 
-/**
- * Restrict admin menu links for editors to only essential functions
- */
-function rula_imprinting_canada_admin_menu() {
-    global $submenu;
 
-    // Remove media for non-admins
-    if( !current_user_can('manage_options') ) {
-      remove_menu_page( 'edit.php' );                   // Posts
-      remove_menu_page( 'edit-comments.php' );          // Comments
-      remove_menu_page( 'tools.php' );                  // Tools
-    }
-}
-add_action( 'admin_menu', 'rula_imprinting_canada_admin_menu' );
+// Include our admin customizations
+require get_template_directory() . '/inc/admin-customizations.php';
+
 
 // Include chapter custom post type
 // include_once( get_template_directory() . '/inc/chapter-cpt.php');
 
-function rula_imprinting_canada_mce_buttons_2( $buttons ) { 
-  /**
-   * Add in a core button that's disabled by default
-   */
-  $buttons[] = 'superscript';
-  $buttons[] = 'subscript';
 
-  return $buttons;
-}
-add_filter( 'mce_buttons_2', 'rula_imprinting_canada_mce_buttons_2' );
 
 add_shortcode('ic_media_modal', 'rula_imprinting_canada_media_modal_shortcode');
 function rula_imprinting_canada_media_modal_shortcode($atts = array(), $content = null, $tag) {
@@ -230,7 +211,7 @@ function rula_imprinting_canada_media_button_image($attachment_id) {
 }
 
 function rula_imprinting_canada_media_button_caption($attachment_id) {
-  return '<div class="caption">' . wp_get_attachment_caption($attachment_id) . '</div>';
+  return '<div class="caption">' . get_the_title($attachment_id) . '</div>';
 }
 
 function rula_imprinting_canada_media_modal_content($attachment_id) {
