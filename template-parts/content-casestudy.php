@@ -9,15 +9,21 @@
 
 ?>
 
+<?php 
+  $post_ancestors = get_post_ancestors($post->ID); 
+  end($post_ancestors);
+  $chapter_id = prev($post_ancestors);
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
   <div class="page-links">
-    <a href="<?php echo get_permalink($post->post_parent); ?>"><em><?php the_field('chapter_title', $post->post_parent) ?></em></a> | <a href="essays">Essays</a> &bull; <a href="case-studies">Case Studies</a>
+    <a href="<?php echo get_permalink($chapter_id); ?>"><em><?php the_field('chapter_title', $chapter_id) ?></em></a> | <a href="<?php the_permalink($chapter_id); ?>essays">Essays</a> &bull; <a href="<?php the_permalink($chapter_id); ?>case-studies">Case Studies</a>
   </div>
 
   <header class="entry-header">
     <div class="entry-header-wrapper">
-      <div class="entry-header-topper"><?php echo get_the_title($post->post_parent) ?>: Case Study</div>
+      <div class="entry-header-topper"><?php echo get_the_title($chapter_id) ?>: Case Study</div>
       <h1 class="entry-title"><?php the_title() ?></h1>
       <div class="entry-author"><?php the_field('case_study_author') ?></div>
     </div>
@@ -32,7 +38,7 @@
     ?>
 
     <div class="page-links">
-      <a href="<?php echo get_permalink($post->post_parent); ?>"><em><?php the_field('chapter_title', $post->post_parent) ?></em></a> | <a href="essays">Essays</a> &bull; <a href="case-studies">Case Studies</a>
+      <a href="<?php echo get_permalink($chapter_id); ?>"><em><?php the_field('chapter_title', $chapter_id) ?></em></a> | <a href="<?php the_permalink($chapter_id); ?>essays">Essays</a> &bull; <a href="<?php the_permalink($chapter_id); ?>case-studies">Case Studies</a>
     </div>
 
   </div><!-- .entry-content -->
