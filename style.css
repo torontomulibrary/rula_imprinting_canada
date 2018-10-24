@@ -715,10 +715,26 @@ body {
   position: relative;
   top: 1.5rem;
   left: 2rem;
+  background: none;
+  border-radius: 0;
+  border: 3px solid #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 0.2em 0.6em;
+  color: #fff;
 }
 
-.single-chapters .main-navigation .menu {
+.menu-toggle:hover {
+  cursor: pointer;
+  border: 3px solid #000;
+  color: #000;
+}
 
+.menu-toggle.close-menu {
+  top: auto;
+  left: auto;
+  display: inline;
 }
 
 .main-navigation .menu li {
