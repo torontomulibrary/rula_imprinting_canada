@@ -15,6 +15,11 @@ get_header();
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      transition: box-shadow 0.1s ease-in-out;
+    }
+
+    #book-splash:hover {
+      box-shadow: 0px 0px 5px #fff;
     }
   </style>
 
