@@ -170,9 +170,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
   require get_template_directory() . '/inc/jetpack.php';
 }
 
-
 // Include our admin customizations
 require get_template_directory() . '/inc/admin-customizations.php';
+
+// Include our extra theme template functions
+require get_template_directory() . '/inc/ic-template-functions.php';
 
 
 // Include chapter custom post type

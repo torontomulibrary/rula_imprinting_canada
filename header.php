@@ -45,7 +45,13 @@
 				<div class="h1">Contents</div>
 				<ul>
 						<?php while ( $chapters_query->have_posts() ) : $chapters_query->the_post(); ?>
-							<li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+							<li>
+								<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+								<ul>
+									<li><a href="<?php the_permalink() ?>essays">Essays</a></li>
+									<li><a href="<?php the_permalink() ?>case-studies">Case Studies</a></li>
+								</ul>
+							</li>
 				    <?php endwhile; ?>
 		    </ul>
 			</div>
