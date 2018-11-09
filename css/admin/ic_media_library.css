@@ -19,6 +19,15 @@ p.media-types.media-types-required-info {
   height: auto;
 }
 
+/* Fix the tooltips on the upload media page */
+.upload-php .acf-fc-popup {
+  margin-top: -110px!important;
+}
+
+.upload-php .acf-tooltip.top {
+  margin-top: -40px!important;
+}
+
 /* Give the input fields a bit more breathing room */
 .media-modal .compat-attachment-fields > tbody > .acf-field-repeater .acf-actions {
   margin-bottom: 5px!important;
