@@ -42,9 +42,9 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5be5f3557daa9",
-                            "label": "Notes",
-                            "name": "notes",
+                            "key": "field_5be9c14c92561",
+                            "label": "Alternative titles",
+                            "name": "alternative_titles",
                             "type": "repeater",
                             "instructions": "",
                             "required": 0,
@@ -58,13 +58,13 @@
                             "min": 0,
                             "max": 0,
                             "layout": "table",
-                            "button_label": "Add notes",
+                            "button_label": "",
                             "sub_fields": [
                                 {
-                                    "key": "field_5be5f35e7daaa",
-                                    "label": "Label",
-                                    "name": "label",
-                                    "type": "text",
+                                    "key": "field_5be9c15992562",
+                                    "label": "Alternative title type",
+                                    "name": "alternative_title_type",
+                                    "type": "select",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -73,16 +73,26 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "choices": {
+                                        "Cover title": "Cover title",
+                                        "Half-title": "Half-title",
+                                        "Other editions": "Other editions",
+                                        "Running title": "Running title",
+                                        "Spine title": "Spine title",
+                                        "Title from dust jacket": "Title from dust jacket"
+                                    },
+                                    "default_value": [],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
                                 },
                                 {
-                                    "key": "field_5be5f36c7daab",
-                                    "label": "Notes",
-                                    "name": "notes",
+                                    "key": "field_5be9c18992563",
+                                    "label": "Alternative title text",
+                                    "name": "alternative_title_text",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
@@ -99,17 +109,239 @@
                                     "maxlength": ""
                                 }
                             ]
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5be5f395b178b": {
-                    "key": "layout_5be5f395b178b",
-                    "name": "book_cover",
-                    "label": "Metadata for object type \"book cover\"",
-                    "display": "block",
-                    "sub_fields": [
+                        },
+                        {
+                            "key": "field_5be9c1b592564",
+                            "label": "Place of publication",
+                            "name": "place_of_publication",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5be9c1c392565",
+                            "label": "Name of publisher",
+                            "name": "name_of_publisher",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5be9c1cb92566",
+                            "label": "Secondary place of publication(s)",
+                            "name": "secondary_place_of_publications",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5be9c1e092567",
+                                    "label": "Place of publication",
+                                    "name": "place_of_publication",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_5be9c1fc92568",
+                            "label": "Secondary name of publisher(s)",
+                            "name": "secondary_name_of_publishers",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5be9c20892569",
+                                    "label": "Name of publisher",
+                                    "name": "name_of_publisher",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_5be9c2189256a",
+                            "label": "Date(s)",
+                            "name": "dates",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5be9c2229256b",
+                                    "label": "Date",
+                                    "name": "date",
+                                    "type": "date_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "display_format": "d\/m\/Y",
+                                    "return_format": "d\/m\/Y",
+                                    "first_day": 1
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_5be9c2459256c",
+                            "label": "Stated edition or impression",
+                            "name": "stated_edition_or_impression",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5be9c2589256d",
+                            "label": "Pagination",
+                            "name": "pagination",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5be9c265924d0",
+                            "label": "Series title with number",
+                            "name": "series_title_with_number",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5be9c270924d1",
+                            "label": "Source",
+                            "name": "source",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5be5f3b7b178c",
                             "label": "Creator(s)",
@@ -206,6 +438,75 @@
                                 }
                             ]
                         },
+                        {
+                            "key": "field_5be5f3557daa9",
+                            "label": "Notes",
+                            "name": "notes",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "Add notes",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5be5f35e7daaa",
+                                    "label": "Label",
+                                    "name": "label",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5be5f36c7daab",
+                                    "label": "Notes",
+                                    "name": "notes",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5be5f395b178b": {
+                    "key": "layout_5be5f395b178b",
+                    "name": "book_cover",
+                    "label": "Metadata for object type \"book cover\"",
+                    "display": "block",
+                    "sub_fields": [
                         {
                             "key": "field_5be5f4ea039b3",
                             "label": "Notes",
@@ -637,5 +938,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541797450
+    "modified": 1542046565
 }
