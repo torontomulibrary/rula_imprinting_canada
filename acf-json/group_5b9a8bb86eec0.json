@@ -508,6 +508,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5be9c44711e43",
+                            "label": "Creator",
+                            "name": "creator",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5be5f4ea039b3",
                             "label": "Notes",
                             "name": "notes",
@@ -576,6 +595,25 @@
                     "label": "Metadata for object type \"book jacket\"",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_5be9c458bc9d4",
+                            "label": "Creator",
+                            "name": "creator",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5be5f5b105479",
                             "label": "Notes",
@@ -784,6 +822,64 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5be9c47fbc9d5",
+                            "label": "Type",
+                            "name": "type",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "Photograph": "Photograph",
+                                "Photograph (non-frontispiece)": "Photograph (non-frontispiece)",
+                                "Drawing": "Drawing",
+                                "Engraving \/ Etching": "Engraving \/ Etching",
+                                "Lithograph": "Lithograph",
+                                "Portrait": "Portrait",
+                                "Unspecified format \/ process": "Unspecified format \/ process",
+                                "Other": "Other"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5be9c4bebc9d6",
+                            "label": "Type Other",
+                            "name": "type_other",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5be9c47fbc9d5",
+                                        "operator": "==",
+                                        "value": "Other"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5be5f5e305486",
                             "label": "Notes",
                             "name": "notes",
@@ -918,7 +1014,7 @@
             },
             "button_label": "Add Metadata",
             "min": 1,
-            "max": 1
+            "max": 2
         }
     ],
     "location": [
@@ -938,5 +1034,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542046723
+    "modified": 1542047569
 }
