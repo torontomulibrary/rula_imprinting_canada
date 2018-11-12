@@ -58,7 +58,7 @@
                             "min": 0,
                             "max": 0,
                             "layout": "table",
-                            "button_label": "",
+                            "button_label": "Add Alternative Title",
                             "sub_fields": [
                                 {
                                     "key": "field_5be9c15992562",
@@ -165,7 +165,7 @@
                             "min": 0,
                             "max": 0,
                             "layout": "table",
-                            "button_label": "",
+                            "button_label": "Add Secondary Place of Publication",
                             "sub_fields": [
                                 {
                                     "key": "field_5be9c1e092567",
@@ -205,7 +205,7 @@
                             "min": 0,
                             "max": 0,
                             "layout": "table",
-                            "button_label": "",
+                            "button_label": "Add Secondary Name of Publisher",
                             "sub_fields": [
                                 {
                                     "key": "field_5be9c20892569",
@@ -245,7 +245,7 @@
                             "min": 0,
                             "max": 0,
                             "layout": "table",
-                            "button_label": "",
+                            "button_label": "Add Date",
                             "sub_fields": [
                                 {
                                     "key": "field_5be9c2229256b",
@@ -938,5 +938,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542046565
+    "modified": 1542046723
 }
