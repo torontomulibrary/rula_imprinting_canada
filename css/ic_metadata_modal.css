@@ -33,11 +33,14 @@
   text-align: left;
 }
 
-.modal.ic_media_modal .ic_modal_image {
+.ic_modal_image {
   margin-bottom: 1rem;
 }
 
-.modal.ic_media_modal .ic_modal_metadata {
+.ic_modal_metadata h6 {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  margin-bottom: 0;
 }
 
 @media (min-width: 1024px) {
@@ -45,12 +48,12 @@
     display: flex;
   } 
 
-  .modal.ic_media_modal .ic_modal_metadata {
+  .ic_modal_metadata {
     order: 0;
     min-width: 325px;
   }
 
-  .modal.ic_media_modal .ic_modal_image {
+  .ic_modal_image {
     order: 1;
     margin-bottom: 0;
   }
