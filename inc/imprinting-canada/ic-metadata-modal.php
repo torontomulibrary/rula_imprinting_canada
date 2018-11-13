@@ -68,23 +68,16 @@ function rula_ic_metadata_modal_content_body($attachment_id) {
 
   if ( have_rows('metadata', $attachment_id) ) :
     while ( have_rows('metadata', $attachment_id) ) : the_row();
+      // Get the field names for the row, minus acf_fc_layout
+      $field_names = array_keys( get_row( true ) );
+      array_shift($field_names);
+
       $html .= '<div class="ic_modal_metadata">';
 
-      if ( get_row_layout() == 'book' ) :
-        $html .= rula_ic_metadata_layout_book($attachment_id);
-      elseif ( get_row_layout() == 'book_cover' ) :
-        $html .= rula_ic_metadata_layout_book_cover($attachment_id);
-      elseif ( get_row_layout() == 'book_jacket' ) :
-        $html .= rula_ic_metadata_layout_book_jacket($attachment_id);
-      elseif ( get_row_layout() == 'title_page' ) :
-        $html .= rula_ic_metadata_layout_title_page($attachment_id);
-      elseif ( get_row_layout() == 'text_page' ) :
-        $html .= rula_ic_metadata_layout_text_page($attachment_id);
-      elseif ( get_row_layout() == 'illustration' ) :
-        $html .= rula_ic_metadata_layout_illustration($attachment_id);
-      elseif ( get_row_layout() == 'other' ) :
-        $html .= rula_ic_metadata_layout_other($attachment_id);
-      endif;
+      // Loop thru all the field names, and call the respective field function
+      foreach ($field_names as $field_name) :
+        $html .= call_user_func('rula_ic_metadata_field_' . $field_name);
+      endforeach;
 
       $html .= '</div>';
     endwhile;
@@ -101,16 +94,10 @@ function rula_ic_metadata_modal_content_footer($attachment_id) {
   return '';
 }
 
-
 /**
- * Renders the HTML for the flexible content (metadata) options
+ * Renders the HTML for the flexible content (metadata) fields
  */
-function rula_ic_metadata_layout_book($attachment_id) {
-
-  return 'This is a book';
-}
-
-function rula_ic_metadata_layout_book_cover($attachment_id) {
+function rula_ic_metadata_field_creator() {
   $html = '';
 
   if ( get_sub_field('creator') ) :
@@ -121,18 +108,15 @@ function rula_ic_metadata_layout_book_cover($attachment_id) {
   return $html;
 }
 
-function rula_ic_metadata_layout_book_jacket($attachment_id) {
-  return 'This is a book jacket';
-}
+function rula_ic_metadata_field_notes() {
+  $html = '';
 
-function rula_ic_metadata_layout_title_page($attachment_id) {
-  return 'This is a title page';
-}
+  if ( have_rows('notes') ) :
+    while ( have_rows('notes') ) : the_row();
+      $html .= '<h6>'. get_sub_field('label')  .'</h6>';
+      $html .= '<p>'. get_sub_field('notes')  .'</p>';
+    endwhile;
+  endif;
 
-function rula_ic_metadata_layout_illustration($attachment_id) {
-  return 'This is an illustration';
-}
-
-function rula_ic_metadata_layout_other($attachment_id) {
-  return 'This is something else';
+  return $html;
 }
