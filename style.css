@@ -775,9 +775,9 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.page-template-chapter p:first-of-type:first-letter,
-.page-template-casestudy p:first-of-type:first-letter,
-.page-template-essay p:first-of-type:first-letter {
+.page-template-chapter .entry-content > p:first-of-type:first-letter,
+.page-template-casestudy .entry-content > p:first-of-type:first-letter,
+.page-template-essay .entry-content > p:first-of-type:first-letter {
   float: left;
   font-size: 75px;
   line-height: 60px;

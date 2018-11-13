@@ -101,12 +101,24 @@ function rula_ic_metadata_modal_content_footer($attachment_id) {
   return '';
 }
 
+
+/**
+ * Renders the HTML for the flexible content (metadata) options
+ */
 function rula_ic_metadata_layout_book($attachment_id) {
+
   return 'This is a book';
 }
 
 function rula_ic_metadata_layout_book_cover($attachment_id) {
-  return 'This is a book cover';
+  $html = '';
+
+  if ( get_sub_field('creator') ) :
+    $html .= '<h6>Creator</h6>';
+    $html .= '<p>' . get_sub_field('creator') . '</p>';
+  endif;
+
+  return $html;
 }
 
 function rula_ic_metadata_layout_book_jacket($attachment_id) {
