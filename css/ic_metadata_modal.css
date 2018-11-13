@@ -43,6 +43,11 @@
   margin-bottom: 0;
 }
 
+.ic_modal_metadata p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5em;
+}
+
 @media (min-width: 1024px) {
   .modal.ic_media_modal .modal-body {
     display: flex;
