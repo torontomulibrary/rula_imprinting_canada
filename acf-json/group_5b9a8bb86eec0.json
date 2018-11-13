@@ -684,6 +684,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5beb02a7b4f18",
+                            "label": "Creator",
+                            "name": "creator",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5be5f5c10547d",
                             "label": "Notes",
                             "name": "notes",
@@ -753,6 +772,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5beb02c2667c2",
+                            "label": "Creator",
+                            "name": "creator",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5be5f5cc05481",
                             "label": "Notes",
                             "name": "notes",
@@ -821,6 +859,25 @@
                     "label": "Metadata for object type \"illustration\"",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_5beb02cc667c3",
+                            "label": "Creator",
+                            "name": "creator",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5be9c47fbc9d5",
                             "label": "Type",
@@ -949,6 +1006,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5beb02d7667c4",
+                            "label": "Creator",
+                            "name": "creator",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5be5f5f20548a",
                             "label": "Notes",
                             "name": "notes",
@@ -1034,5 +1110,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542047569
+    "modified": 1542128367
 }
