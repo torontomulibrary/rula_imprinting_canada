@@ -132,6 +132,7 @@ function rula_imprinting_canada_scripts() {
   wp_enqueue_script( 'bootstrap-bundle-js', VENDOR_URI . 'bootstrap-4.1.2/js/bootstrap.bundle.min.js', array('jquery'), '4.1.2', true );
 
   wp_enqueue_style( 'rula_imprinting_canada-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'rula-ic-media-modal-style', CSS_URI . 'ic_metadata_modal.css', array(), '0.0.1' );
 
   wp_enqueue_script( 'rula_imprinting_canada-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

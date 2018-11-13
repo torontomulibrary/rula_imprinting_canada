@@ -790,69 +790,6 @@ body {
   text-align: center;
 }
 
-.btn.ic_media_modal {
-  max-width: 300px;
-  background: #fcfcfc;
-  color: #000;
-  border: none;
-  padding: 0;
-  box-shadow: 0px 3px 15px -2px #000;
-  border-radius: 0;
-}
-
-.btn.ic_media_modal .caption {
-  white-space: normal;
-  text-align: left;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.8rem;
-}
-
-.btn.ic_media_modal.float-right {
-  margin-left: 1rem;
-}
-
-.btn.ic_media_modal.float-left {
-  margin-right: 1rem;
-}
-
-.modal.ic_media_modal {
-  padding-left: 17px;
-}
-
-.modal.ic_media_modal .modal-header {
-  border-bottom: 0;
-  text-transform: uppercase;
-  text-align: left;
-}
-
-.modal.ic_media_modal .ic_modal_image {
-  margin-bottom: 1rem;
-}
-
-.modal.ic_media_modal .ic_modal_metadata {
-}
-
-@media (min-width: 1024px) {
-  .modal.ic_media_modal .modal-body {
-    display: flex;
-  } 
-
-  .modal.ic_media_modal .ic_modal_metadata {
-    order: 0;
-    min-width: 325px;
-  }
-
-  .modal.ic_media_modal .ic_modal_image {
-    order: 1;
-    margin-bottom: 0;
-  }
-
-}
-
-.modal.ic_media_modal .modal-footer {
-  border-top: 0;
-}
-
 .page-template-chapter-index .table-of-contents {
   max-width: 500px;
   margin: auto;
