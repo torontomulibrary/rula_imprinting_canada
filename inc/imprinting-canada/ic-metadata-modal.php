@@ -61,21 +61,66 @@ function rula_ic_metadata_modal_content_header($attachment_id) {
 
 function rula_ic_metadata_modal_content_body($attachment_id) {
   $attachment_url = wp_get_attachment_url($attachment_id);
-  $acf_object_type = get_field('type', $attachment_id);
 
   $html = "";
   $html .= '<div class="modal-body">';
-  $html .= '<div class="ic_modal_image">';
-  $html .= '<img src="' . $attachment_url . '">';
+  $html .= '<div class="ic_modal_image"><img src="' . $attachment_url . '"></div>';
+
+  if ( have_rows('metadata', $attachment_id) ) :
+    while ( have_rows('metadata', $attachment_id) ) : the_row();
+      $html .= '<div class="ic_modal_metadata">';
+
+      if ( get_row_layout() == 'book' ) :
+        $html .= rula_ic_metadata_layout_book($attachment_id);
+      elseif ( get_row_layout() == 'book_cover' ) :
+        $html .= rula_ic_metadata_layout_book_cover($attachment_id);
+      elseif ( get_row_layout() == 'book_jacket' ) :
+        $html .= rula_ic_metadata_layout_book_jacket($attachment_id);
+      elseif ( get_row_layout() == 'title_page' ) :
+        $html .= rula_ic_metadata_layout_title_page($attachment_id);
+      elseif ( get_row_layout() == 'text_page' ) :
+        $html .= rula_ic_metadata_layout_text_page($attachment_id);
+      elseif ( get_row_layout() == 'illustration' ) :
+        $html .= rula_ic_metadata_layout_illustration($attachment_id);
+      elseif ( get_row_layout() == 'other' ) :
+        $html .= rula_ic_metadata_layout_other($attachment_id);
+      endif;
+
+      $html .= '</div>';
+    endwhile;
+  else :
+    $html .= "<div>No layouts found!</div>";
+  endif;
+
   $html .= '</div>';
-  $html .= '<div class="ic_modal_metadata">';
-  $html .= '<div>' . $acf_object_type . '</div>';
-  $html .= '</div>';
-  $html .= '</div>';
-  
+
   return $html;
 }
 
 function rula_ic_metadata_modal_content_footer($attachment_id) {
   return '';
+}
+
+function rula_ic_metadata_layout_book($attachment_id) {
+  return 'This is a book';
+}
+
+function rula_ic_metadata_layout_book_cover($attachment_id) {
+  return 'This is a book cover';
+}
+
+function rula_ic_metadata_layout_book_jacket($attachment_id) {
+  return 'This is a book jacket';
+}
+
+function rula_ic_metadata_layout_title_page($attachment_id) {
+  return 'This is a title page';
+}
+
+function rula_ic_metadata_layout_illustration($attachment_id) {
+  return 'This is an illustration';
+}
+
+function rula_ic_metadata_layout_other($attachment_id) {
+  return 'This is something else';
 }
