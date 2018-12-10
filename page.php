@@ -35,6 +35,8 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+<img class="watermark-beaver" src="/wp-content/themes/rula_imprinting_canada/images/beaver.svg">
+
 <?php
 get_sidebar();
 get_footer();

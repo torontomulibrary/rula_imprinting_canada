@@ -303,6 +303,8 @@ a:hover, a:active {
   display: block;
   float: left;
   width: 100%;
+  z-index: 100;
+  line-height: 2rem;
 }
 
 .main-navigation ul {
@@ -319,10 +321,23 @@ a:hover, a:active {
 .main-navigation ul li.focus > ul {
   display: block;
 }
+
 .main-navigation a {
   display: block;
   text-decoration: none;
 }
+
+.content-navigation {
+  line-height: 1.5rem;
+}
+.content-navigation ul {
+  display: none;
+}
+
+.content-navigation:hover > ul {
+  display: inline-block;
+}
+
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -826,4 +841,18 @@ img.body-bg {
 }
 .page-template-chapter-index .table-of-contents table td.chapter-title { 
   width: 100%;
+}
+
+.site-content {
+  transform: translateZ(0);
+}
+
+img.watermark-beaver {
+  opacity: 0.3;
+  width: 300px;
+  max-width: 45%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
