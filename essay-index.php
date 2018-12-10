@@ -28,7 +28,9 @@ get_header();
 
           <?php $query = new WP_Query(array(
             'post_type' => 'page',
-            'post_parent' => $post->ID
+            'post_parent' => $post->ID,
+            'order' => 'ASC',
+            'order_by' => 'menu_order'
           )); ?>
           <?php if ( $query->have_posts() ) : ?>
             <div class="entry-content">
