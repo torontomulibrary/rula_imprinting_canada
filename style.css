@@ -726,7 +726,7 @@ body {
   content: "";
   background: url('./images/background-paper.png') top right no-repeat;
   background-attachment: fixed;
-  opacity: 0.9;
+  opacity: 0.95;
   top: 0;
   left: 0;
   bottom: 0;
