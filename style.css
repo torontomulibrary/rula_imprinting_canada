@@ -613,9 +613,28 @@ object {
 }
 
 /* Imprinting Canada */
-body {
-  background-image: url('./images/background-table.png');
-  background-attachment: fixed;
+img.body-bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1920px;
+  
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: -100;
+}
+
+@media screen and (max-width: 1920px) { /* Specific to this particular image */
+  img.body-bg {
+    left: 50%;
+    margin-left: -960px;   /* 50% */
+  }
 }
 
 .navigation-container {
@@ -724,7 +743,7 @@ body {
 .page #page:after,
 .single #page:after {
   content: "";
-  background: url('./images/background-paper.png') top right no-repeat;
+  background: url('./images/background-paper.png') top center no-repeat;
   background-attachment: fixed;
   opacity: 0.95;
   top: 0;

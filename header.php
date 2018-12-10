@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<img class="body-bg" src="/wp-content/themes/rula_imprinting_canada/images/background-table.png">
 
 <div class="container">
 	<div class="row">
