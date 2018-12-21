@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
 Description: Description
-Version: 1.0.12
+Version: 1.0.13
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: rula_imprinting_canada
@@ -760,7 +760,6 @@ img.body-bg {
   content: "";
   background: url('./images/background-paper.png') top center no-repeat;
   background-attachment: fixed;
-  opacity: 0.95;
   top: 0;
   left: 0;
   bottom: 0;
