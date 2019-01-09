@@ -704,29 +704,44 @@ img.body-bg {
 }
 
 .menu-toggle {
+  box-sizing: content-box;
   position: relative;
   top: 1.5rem;
   left: 2rem;
-  background: none;
   border-radius: 0;
-  border: 3px solid #fff;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1.15rem;
-  padding: 0.2em 0.6em;
-  color: #fff;
+  border: 2px solid #000;
 }
 
 .menu-toggle:hover {
   cursor: pointer;
-  border: 3px solid #000;
+  border-color: #fff;
   color: #000;
 }
 
+.menu-toggle.open-menu {
+  background: rgba(0,0,0,0.5);
+  width: 52px;
+  height: 55px;
+  background-image: url(./images/icon-menu-open.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .menu-toggle.close-menu {
+  background: none;
+  width: 55px;
+  height: 55px;
+  background-image: url(./images/icon-menu-close.png);
+  background-repeat: no-repeat;
+  background-position: center;
   top: auto;
   left: auto;
   display: inline;
+}
+
+.main-navigation {
+  height: 0;
+  width: 0;
 }
 
 .main-navigation .menu li {

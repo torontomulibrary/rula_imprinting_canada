@@ -31,7 +31,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rula_imprinting_canada' ); ?></a>
 
 	<nav id="site-navigation" class="main-navigation">
-		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'rula_imprinting_canada' ); ?></button>
+		<button class="menu-toggle open-menu" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'rula_imprinting_canada' ); ?></button>
 		<div class="navigation-container">
 			<?php
 			wp_nav_menu( array(
