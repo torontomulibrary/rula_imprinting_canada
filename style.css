@@ -846,6 +846,10 @@ img.body-bg {
   transform: translateZ(0);
 }
 
+.home .site-content {
+  transform: none;
+}
+
 img.watermark-beaver {
   opacity: 0.3;
   width: 300px;
