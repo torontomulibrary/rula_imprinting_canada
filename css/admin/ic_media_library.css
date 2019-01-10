@@ -51,3 +51,8 @@ p.media-types.media-types-required-info {
     width: 75%!important;
   }
 }
+
+/* Hide metadata fields on the "Add Media" modal because it gunks up the UI */
+.media-modal-content .acf-field-flexible-content {
+  display: none;
+}
