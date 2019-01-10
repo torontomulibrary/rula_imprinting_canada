@@ -1,50 +1,79 @@
 <?php
-
 /**
- * Our shortcode for the metadata modal
+ * Forces WordPress to use the attachment title as the caption if there is no 
+* caption set for the image.
  */
-add_shortcode('ic_media_modal', 'rula_ic_metadata_modal_shortcode');
-function rula_ic_metadata_modal_shortcode($atts = array(), $content = null, $tag) {
-  $attachment_id = $atts['media-id'];
-  $float = $atts['float'];
-
-  $html = "";
-  $html .= rula_ic_metadata_modal_button($attachment_id, $float);
-  $html .= rula_ic_metadata_modal_content($attachment_id);
-
-  return $html;
-}
-
-/**
- * Renders the HTML for the button that triggers the modal
- */
-function rula_ic_metadata_modal_button($attachment_id, $float) {
-  $classes = array('btn', 'btn-primary', 'ic_media_modal');
-  if ( $float == 'right' ) {
-    $classes[] = 'float-right';
-  } elseif ( $float == 'left' ) {
-    $classes[] = 'float-left';
+add_action( 'image_add_caption_text', 'rula_ic_image_add_caption_text', 10, 2);
+function rula_ic_image_add_caption_text($caption, $id) {
+  if ( empty($caption) ) {
+    return get_the_title($id);
   }
+  return $caption;
+}
 
-  $html = '<button type="button" class="' . implode(" ", $classes) . '" data-toggle="modal" data-target="#ic_media_' . $attachment_id . '">';
-  $html .= rula_ic_metadata_modal_button_image($attachment_id);
-  $html .= rula_ic_metadata_modal_button_caption($attachment_id);
-  $html .= '</button>';
-
+/** 
+ * Hijacks the caption shortcode to display a modal.
+ */
+add_filter( 'img_caption_shortcode', 'rula_ic_img_caption_shortcode', 10, 3 );
+function rula_ic_img_caption_shortcode( $empty, $attr, $content ) {
+  $atts = shortcode_atts( array(
+    'id'      => '',
+    'align'   => 'alignnone',
+    'width'   => '',
+    'caption' => '',
+    'class'   => '',
+  ), $attr, 'caption' );
+  // Strip out the "attachment_" part of the id and save it
+  $attachment_id = str_replace('attachment_', '', $atts['id']);
+  $atts['width'] = (int) $atts['width'];
+  if ( $atts['width'] < 1 || empty( $atts['caption'] ) )
+    return $content;
+  if ( ! empty( $atts['id'] ) )
+    $atts['id'] = 'id="' . esc_attr( sanitize_html_class( $atts['id'] ) ) . '" ';
+  $class = trim( 'wp-caption ' . $atts['align'] . ' ' . $atts['class'] );
+  $html5 = current_theme_supports( 'html5', 'caption' );
+        // HTML5 captions never added the extra 10px to the image width
+  $width = $html5 ? $atts['width'] : ( 10 + $atts['width'] );
+  /**
+   * Filters the width of an image's caption.
+   *
+   * By default, the caption is 10 pixels greater than the width of the image,
+   * to prevent post content from running up against a floated image.
+   *
+   * @since 3.7.0
+   *
+   * @see img_caption_shortcode()
+   *
+   * @param int    $width    Width of the caption in pixels. To remove this inline style,
+   *                         return zero.
+   * @param array  $atts     Attributes of the caption shortcode.
+   * @param string $content  The image element, possibly wrapped in a hyperlink.
+   */
+  $caption_width = apply_filters( 'img_caption_shortcode_width', $width, $atts, $content );
+  $style = '';
+  if ( $caption_width ) {
+    $style = 'style="width: ' . (int) $caption_width . 'px" ';
+  }
+  $bs_modal = '';
+  if ( have_rows('metadata', $attachment_id) ) {
+    $bs_modal = 'data-toggle="modal" data-target="#attachment_' . $attachment_id . '_metadata" ';
+  }
+  if ( $html5 ) {
+    $html = '<figure ' . $atts['id'] . $style . $bs_modal . 'class="' . esc_attr( $class ) . '">'
+    . do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
+  } else {
+    $html = '<div ' . $atts['id'] . $style . $bs_modal . 'class="' . esc_attr( $class ) . '">'
+    . do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
+  }
+  if ( have_rows('metadata', $attachment_id) ) {
+    $html .= rula_ic_metadata_modal_content($attachment_id);
+  }
   return $html;
-}
-
-function rula_ic_metadata_modal_button_image($attachment_id) {
-  return '<img src="' . wp_get_attachment_url($attachment_id) . '">';
-}
-
-function rula_ic_metadata_modal_button_caption($attachment_id) {
-  return '<div class="caption">' . get_the_title($attachment_id) . '</div>';
 }
 
 function rula_ic_metadata_modal_content($attachment_id) {
   $html = "";
-  $html .= '<div class="modal fade ic_media_modal" id="ic_media_' . $attachment_id . '" tabindex="-1" role="dialog" aria-labelledby="ic_media_' . $attachment_id . '_label" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content">';
+  $html .= '<div class="modal fade ic_media_modal" id="attachment_' . $attachment_id . '_metadata" tabindex="-1" role="dialog" aria-labelledby="ic_media_' . $attachment_id . '_label" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content">';
   $html .= rula_ic_metadata_modal_content_header($attachment_id);
   $html .= rula_ic_metadata_modal_content_body($attachment_id);
   $html .= rula_ic_metadata_modal_content_footer($attachment_id);
@@ -92,31 +121,4 @@ function rula_ic_metadata_modal_content_body($attachment_id) {
 
 function rula_ic_metadata_modal_content_footer($attachment_id) {
   return '';
-}
-
-/**
- * Renders the HTML for the flexible content (metadata) fields
- */
-function rula_ic_metadata_field_creator() {
-  $html = '';
-
-  if ( get_sub_field('creator') ) :
-    $html .= '<h6>Creator</h6>';
-    $html .= '<p>' . get_sub_field('creator') . '</p>';
-  endif;
-
-  return $html;
-}
-
-function rula_ic_metadata_field_notes() {
-  $html = '';
-
-  if ( have_rows('notes') ) :
-    while ( have_rows('notes') ) : the_row();
-      $html .= '<h6>'. get_sub_field('label')  .'</h6>';
-      $html .= '<p>'. get_sub_field('notes')  .'</p>';
-    endwhile;
-  endif;
-
-  return $html;
 }
