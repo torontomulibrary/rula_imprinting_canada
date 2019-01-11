@@ -1,7 +1,7 @@
 /* Hijacking the wp-caption styles to make it look the way we want*/
 .wp-caption {
   max-width: 300px;
-  background: #fcfcfc;
+  background: #fff4e7;
   color: #000;
   border: none;
   padding: 0;
