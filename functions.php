@@ -178,6 +178,7 @@ require get_template_directory() . '/inc/admin-customizations.php';
 // require get_template_directory() . '/inc/imprinting-canada/ic-template-functions.php';
 require get_template_directory() . '/inc/imprinting-canada/ic-metadata-modal.php';
 require get_template_directory() . '/inc/imprinting-canada/ic-metadata-fields.php';
+require get_template_directory() . '/inc/imprinting-canada/ic-footnotes.php';
 
 // Include chapter custom post type
 // include_once( get_template_directory() . '/inc/chapter-cpt.php');
