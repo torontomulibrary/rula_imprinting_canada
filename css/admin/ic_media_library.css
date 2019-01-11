@@ -1,6 +1,5 @@
 /* Hide fields and settings that we don't want to see */
-label.setting[data-setting="caption"],
-label.setting[data-setting="description"],
+label.setting[data-setting="description"], /* Val might want description back later. he mentioned something about internal notes" */
 label.setting:last-of-type, /* this should target the "Uploaded By" field */
 p.media-types.media-types-required-info {
   display: none;
