@@ -659,10 +659,10 @@ img.body-bg {
   left: 0;
   width: 100%;
   height: 100vh;
-  max-width: 200px;
   padding-top: 5rem;
   padding-bottom: 52px; 
 }
+
 
 .navigation-container:after {
   content: '';
@@ -678,6 +678,12 @@ img.body-bg {
 
 .navigation-container li a {
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  .navigation-container { 
+    max-width: 200px;
+  }
 }
 
 .main-navigation.toggled .navigation-container {
