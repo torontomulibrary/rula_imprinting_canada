@@ -440,7 +440,7 @@
                         },
                         {
                             "key": "field_5be5f3557daa9",
-                            "label": "Notes",
+                            "label": "Custom Fields",
                             "name": "notes",
                             "type": "repeater",
                             "instructions": "",
@@ -528,7 +528,7 @@
                         },
                         {
                             "key": "field_5be5f4ea039b3",
-                            "label": "Notes",
+                            "label": "Custom Fields",
                             "name": "notes",
                             "type": "repeater",
                             "instructions": "",
@@ -616,7 +616,7 @@
                         },
                         {
                             "key": "field_5be5f5b105479",
-                            "label": "Notes",
+                            "label": "Custom Fields",
                             "name": "notes",
                             "type": "repeater",
                             "instructions": "",
@@ -630,7 +630,7 @@
                             "collapsed": "",
                             "min": 0,
                             "max": 0,
-                            "layout": "",
+                            "layout": "table",
                             "button_label": "",
                             "sub_fields": [
                                 {
@@ -704,7 +704,7 @@
                         },
                         {
                             "key": "field_5be5f5c10547d",
-                            "label": "Notes",
+                            "label": "Custom Fields",
                             "name": "notes",
                             "type": "repeater",
                             "instructions": "",
@@ -718,7 +718,7 @@
                             "collapsed": "",
                             "min": 0,
                             "max": 0,
-                            "layout": "",
+                            "layout": "table",
                             "button_label": "",
                             "sub_fields": [
                                 {
@@ -792,7 +792,7 @@
                         },
                         {
                             "key": "field_5be5f5cc05481",
-                            "label": "Notes",
+                            "label": "Custom Fields",
                             "name": "notes",
                             "type": "repeater",
                             "instructions": "",
@@ -806,7 +806,7 @@
                             "collapsed": "",
                             "min": 0,
                             "max": 0,
-                            "layout": "",
+                            "layout": "table",
                             "button_label": "",
                             "sub_fields": [
                                 {
@@ -938,7 +938,7 @@
                         },
                         {
                             "key": "field_5be5f5e305486",
-                            "label": "Notes",
+                            "label": "Custom Fields",
                             "name": "notes",
                             "type": "repeater",
                             "instructions": "",
@@ -952,7 +952,7 @@
                             "collapsed": "",
                             "min": 0,
                             "max": 0,
-                            "layout": "",
+                            "layout": "table",
                             "button_label": "",
                             "sub_fields": [
                                 {
@@ -1026,7 +1026,7 @@
                         },
                         {
                             "key": "field_5be5f5f20548a",
-                            "label": "Notes",
+                            "label": "Custom Fields",
                             "name": "notes",
                             "type": "repeater",
                             "instructions": "",
@@ -1117,5 +1117,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1547146491
+    "modified": 1547227300
 }
