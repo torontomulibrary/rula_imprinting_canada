@@ -24,7 +24,7 @@ function rula_ic_img_caption_shortcode( $empty, $attr, $content ) {
     'class'   => '',
   ), $attr, 'caption' );
   // Strip out the "attachment_" part of the id and save it
-  $attachment_id = str_replace('attachment_', '', $atts['id']);
+  $attachment_id = (int) str_replace('attachment_', '', $atts['id']);
   $atts['width'] = (int) $atts['width'];
   if ( $atts['width'] < 1 || empty( $atts['caption'] ) )
     return $content;
@@ -60,7 +60,7 @@ function rula_ic_img_caption_shortcode( $empty, $attr, $content ) {
   }
   if ( $html5 ) {
     $html = '<figure ' . $atts['id'] . $style . $bs_modal . 'class="' . esc_attr( $class ) . '">'
-    . do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
+    . do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . rula_ic_get_attachment_caption($attachment_id) . '</figcaption></figure>';
   } else {
     $html = '<div ' . $atts['id'] . $style . $bs_modal . 'class="' . esc_attr( $class ) . '">'
     . do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
@@ -69,6 +69,16 @@ function rula_ic_img_caption_shortcode( $empty, $attr, $content ) {
     $html .= rula_ic_metadata_modal_content($attachment_id);
   }
   return $html;
+}
+
+function rula_ic_get_attachment_caption($attachment_id) {
+  $caption = wp_get_attachment_caption($attachment_id);
+
+  if ( empty($caption) ) {
+    return get_the_title($attachment_id);
+  }
+  
+  return $caption;
 }
 
 function rula_ic_metadata_modal_content($attachment_id) {
