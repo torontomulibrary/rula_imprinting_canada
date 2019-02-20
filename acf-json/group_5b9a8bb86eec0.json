@@ -189,7 +189,7 @@
                             ]
                         },
                         {
-                            "key": "field_5be9c1fc92568",
+                            "key": "field_5c6d88765bc23",
                             "label": "Secondary name of publisher(s)",
                             "name": "secondary_name_of_publishers",
                             "type": "repeater",
@@ -208,7 +208,7 @@
                             "button_label": "Add Secondary Name of Publisher",
                             "sub_fields": [
                                 {
-                                    "key": "field_5be9c20892569",
+                                    "key": "field_5c6d88965bc24",
                                     "label": "Name of publisher",
                                     "name": "name_of_publisher",
                                     "type": "text",
@@ -1117,5 +1117,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1547227300
+    "modified": 1550683088
 }

@@ -45,6 +45,11 @@
 
 .ic_modal_image {
   margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.ic_modal_metadata {
+  padding: 0 1rem;
 }
 
 .ic_modal_metadata h6 {
@@ -55,7 +60,11 @@
 
 .ic_modal_metadata p {
   font-size: 0.95rem;
-  margin-bottom: 0.5em;
+  margin-bottom: 0em;
+}
+
+.ic_modal_metadata_field {
+  margin-top: 0.75rem;
 }
 
 @media (min-width: 1024px) {
