@@ -55,6 +55,8 @@
 	</div>
 </div>
 
+<?php the_rula_ic_metadata_modals(); ?>
+
 <?php wp_footer(); ?>
 
 </body>

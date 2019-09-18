@@ -66,7 +66,8 @@ function rula_ic_img_caption_shortcode( $empty, $attr, $content ) {
     . do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
   }
   if ( have_rows('metadata', $attachment_id) ) {
-    $html .= rula_ic_metadata_modal_content($attachment_id);
+    global $rula_ic_modal_html;
+    $rula_ic_modal_html .= rula_ic_metadata_modal_content($attachment_id);
   }
   return $html;
 }
@@ -134,4 +135,14 @@ function rula_ic_metadata_modal_content_body($attachment_id) {
 
 function rula_ic_metadata_modal_content_footer($attachment_id) {
   return '';
+}
+
+// Global variable so we can render the modal content later
+global $rula_ic_modal_html;
+$rula_ic_modal_html = '';
+
+// Template function for rendering the modal content
+function the_rula_ic_metadata_modals() {
+  global $rula_ic_modal_html;
+  echo $rula_ic_modal_html;
 }
