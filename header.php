@@ -43,7 +43,7 @@
 			<?php $chapters_query = new WP_Query(array('post_type' => 'page', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order', 'depth' => 1, 'meta_key' => '_wp_page_template', 'meta_value' => 'chapter.php' )); ?>
 			<?php if ( $chapters_query->have_posts() ) : ?>
 			<div class="content-navigation">
-				<div class="h1">Contents</div>
+				<div class="h1">Chapters</div>
 				<ul>
 						<?php while ( $chapters_query->have_posts() ) : $chapters_query->the_post(); ?>
 							<li>
