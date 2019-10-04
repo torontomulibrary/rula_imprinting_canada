@@ -47,7 +47,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<img style="height: 32px;" src="/wp-content/themes/rula_imprinting_canada/images/logo-ryerson.png">
+				<img style="height: 32px;" src="/wp-content/themes/rula_imprinting_canada/images/logo-rylib-arts.svg">
 				<img style="height: 25px;" src="/wp-content/themes/rula_imprinting_canada/images/logo-sshrcc.png">
 				<img style=" height: 30px" src="/wp-content/themes/rula_imprinting_canada/images/logo-ccbync.png">
 			</div>
