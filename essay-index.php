@@ -30,7 +30,7 @@ get_header();
             'post_type' => 'page',
             'post_parent' => $post->ID,
             'order' => 'ASC',
-            'order_by' => 'menu_order'
+            'orderby' => 'menu_order'
           )); ?>
           <?php if ( $query->have_posts() ) : ?>
             <div class="entry-content">
