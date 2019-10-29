@@ -1,14 +1,18 @@
 /* Hijacking the wp-caption styles to make it look the way we want*/
 .wp-caption {
   max-width: 300px;
-  background: #fff4e7;
+  background: rgba(255,244,231,0.4);
   color: #000;
   border: none;
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
-  box-shadow: 0px 3px 15px -2px #000;
   border-radius: 0;
+}
+
+.wp-caption img {
+  box-shadow: 0px 3px 10px -2px #000;
+  margin-bottom: 0.5rem;
 }
 
 .wp-caption.alignright {
