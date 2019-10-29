@@ -774,10 +774,10 @@ img.body-bg {
   text-align: justify;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 767px) {
   .page #page,
   .single #page {
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 3rem;
   }
 }
 
