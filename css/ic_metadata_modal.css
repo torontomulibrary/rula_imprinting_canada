@@ -1,6 +1,6 @@
 /* Hijacking the wp-caption styles to make it look the way we want*/
 .wp-caption {
-  max-width: 300px;
+  max-width: 100%;
   background: rgba(255,244,231,0.4);
   color: #000;
   border: none;
@@ -13,6 +13,17 @@
 .wp-caption img {
   box-shadow: 0px 3px 10px -2px #000;
   margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .wp-caption {
+    display: block!important;
+    width: 100%!important;
+    margin: 0!important;
+  }
+  .wp-caption img {
+    width: 100%!important;
+  }
 }
 
 .wp-caption.alignright {
