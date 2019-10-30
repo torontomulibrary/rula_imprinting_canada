@@ -784,14 +784,16 @@ img.body-bg {
 .page #page:after,
 .single #page:after {
   content: "";
-  background: url('./images/background-paper.png') top center;
+  background: url('./images/background-paper.jpg') top center;
   background-attachment: fixed;
+  background-size: cover;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
   z-index: -10;   
+  opacity: 0.8;
 }
 
 .home.page #page:after {
