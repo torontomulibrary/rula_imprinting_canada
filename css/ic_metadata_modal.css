@@ -15,11 +15,11 @@
   margin-bottom: 0.5rem;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .wp-caption {
     display: block!important;
     width: 100%!important;
-    margin: 0!important;
+    margin: 0 0 0.5rem 0!important;
   }
   .wp-caption img {
     width: 100%!important;
