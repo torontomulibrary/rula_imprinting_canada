@@ -27,7 +27,11 @@ get_header();
 
     </main><!-- #main -->
   </div><!-- #primary -->
+
 <img class="watermark-beaver" src="/wp-content/themes/rula_imprinting_canada/images/beaver.svg">
+
+<div style="text-align:right;"><a href="#content">Back to top</a></div>
+
 <?php
 get_sidebar();
 get_footer();
