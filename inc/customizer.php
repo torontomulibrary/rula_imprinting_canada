@@ -25,6 +25,21 @@ function rula_imprinting_canada_customize_register( $wp_customize ) {
 			'render_callback' => 'rula_imprinting_canada_customize_partial_blogdescription',
 		) );
 	}
+
+	$wp_customize->add_section( 'rula_imprinting_canada_ga' , array(
+    'title'      => __( 'Google Analytics', 'rula_imprinting_canada' ),
+    'priority'   => 200,
+	) );
+	$wp_customize->add_setting( 'ga_property_id' , array(
+    'default'   => false,
+    'transport' => 'refresh',
+	) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'link_color', array(
+		'label'      => __( 'Google Analytics Property ID', 'rula_imprinting_canada' ),
+		'section'    => 'rula_imprinting_canada_ga',
+		'settings'   => 'ga_property_id',
+	) ) );
+
 }
 add_action( 'customize_register', 'rula_imprinting_canada_customize_register' );
 

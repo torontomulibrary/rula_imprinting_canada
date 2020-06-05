@@ -13,6 +13,17 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+	<?php if ( get_theme_mod('ga_property_id') ) : ?>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo get_theme_mod('ga_property_id'); ?>"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', '<?php echo get_theme_mod('ga_property_id'); ?>');
+		</script>
+	<?php endif; ?>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
