@@ -116,9 +116,12 @@ function rula_ic_metadata_modal_content_body($attachment_id) {
       // Loop thru all the field names, and call the respective field function
       foreach ($field_names as $field_name) :
         if ( get_sub_field($field_name) ) {
-          $html .= '<div class="ic_modal_metadata_field">';
-          $html .= call_user_func('rula_ic_metadata_field_' . $field_name);
-          $html .= '</div>';
+          $field_callback_function = 'rula_ic_metadata_field_' . $field_name;
+          if( function_exists($field_callback_function) ) {
+            $html .= '<div class="ic_modal_metadata_field">';
+            $html .= call_user_func($field_callback_function);
+            $html .= '</div>';
+          }
         }
       endforeach;
 
